@@ -131,7 +131,7 @@ const windowText = computed(() => {
   if (st.state === 'in') {
     let base = `${st.window.start} – ${st.window.end}`
     if (st.window.subject === '점심') {
-      base += `\n13:00까지 입실 완료\n(12:30 점심)`
+      base += `\n13:00까지 입실 완료`
     }
     return base
   }
