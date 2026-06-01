@@ -1,14 +1,17 @@
-FROM node:22-alpine
+# Build stage
+FROM node:22-alpine AS builder
 
 RUN npm install -g bun
 
 WORKDIR /app
-
 COPY package.json bun.lock ./
 RUN bun install
-
 COPY . .
+RUN bun run build
 
+# Serve stage
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 5173
-
-CMD ["bun", "run", "dev", "--", "--host", "0.0.0.0"]
+CMD ["nginx", "-g", "daemon off;"]
