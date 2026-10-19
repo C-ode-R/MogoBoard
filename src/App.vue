@@ -54,7 +54,7 @@ const SCHEDULE = [
   { subject: '점심', start: '12:10', end: '13:00'},
   { subject: '영어', start: '13:10', end: '14:20', sit: '13:00' },
   { subject: '한국사', start: '14:50', end: '15:20', sit: '14:40' },
-  { subject: '사회탐구', start: '15:35', end: '16:15' },
+  { subject: '사회탐구/직업탐구', start: '15:35', end: '16:15' },
   { subject: '과학탐구', start: '16:30', end: '17:10' },
 ]
 
@@ -190,7 +190,7 @@ body {
 }
 .layout {
   display: grid;
-  grid-template-columns: 360px 1fr;
+  grid-template-columns: 520px 1fr;
   grid-template-rows: auto 1fr;
   height: 100dvh;
   min-height: 100dvh;
